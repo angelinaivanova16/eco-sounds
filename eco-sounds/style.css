@@ -1,0 +1,78 @@
+@font-face {
+ font-family: Roboto-Regular;
+ src: url(./assets/fonts/Roboto/Roboto-Regular.ttf);
+}
+
+
+html {
+ scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.container {
+ /* width: 1920px; */
+ margin: 0 auto;
+ font-family: Roboto-Regular;
+}
+
+
+/* --------------------------------------------------header-------------------------------------------------------- */
+
+.foot, .header-container {
+ background: black;
+ height: 10vh;
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ color: white;
+}
+
+.main-menu {
+ display: flex;
+ justify-content: space-between;
+ list-style: none;
+}
+
+.link {
+ padding: 0 2em 0 0;
+ font-size: 1.2vw;
+ text-decoration: none;
+ color: white;
+}
+
+.link:hover {
+ filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%)
+   contrast(87%);
+}
+
+/* --------------------------------------------------main-------------------------------------------------------- */
+
+.main-container {
+ background: lightskyblue;
+ height: 80vh;
+}
+
+/* --------------------------------------------------footer-------------------------------------------------------- */
+
+.footer-leftside {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ font-size: 1.2vw;
+ padding: 0 0 0 2em;
+}
+.year {
+ padding: 0 2em 0 0;
+}
+
+.gh, .footer-rss {
+ text-decoration: none;
+ color: white;
+ font-size: 1.2vw;
+ padding: 0 2em 0 0;
+}
