@@ -32,6 +32,12 @@ body {
  color: white;
 }
 
+.img-bird {
+  padding-left: 2em;
+  height: 7vh;
+  transition: 0.3s;
+}
+
 .main-menu {
  display: flex;
  justify-content: space-between;
@@ -45,16 +51,34 @@ body {
  color: white;
 }
 
-.link:hover {
- filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%)
-   contrast(87%);
-}
-
 /* --------------------------------------------------main-------------------------------------------------------- */
 
 .main-container {
- background: lightskyblue;
+ background-image: url('./assets/img/forest.jpg');
+ background-position: center;
+ background-repeat: no-repeat;
+ background-size: cover;
  height: 80vh;
+ position: relative;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+.btn-video {
+ position: absolute;
+ background: transparent;
+ background-image: url('./assets/svg/play.svg');
+ background-repeat: no-repeat;
+ background-size: auto 20vh;
+ cursor: pointer;
+ border: 0;
+ width: 20vh;
+ height: 20vh;
+ transition: 0.3s;
+}
+.btn-video:hover {
+ filter: invert(26%) sepia(7%) saturate(300%) hue-rotate(9deg) brightness(98%)
+    contrast(87%);
 }
 
 /* --------------------------------------------------footer-------------------------------------------------------- */
@@ -70,9 +94,20 @@ body {
  padding: 0 2em 0 0;
 }
 
-.gh, .footer-rss {
+.gh {
  text-decoration: none;
  color: white;
  font-size: 1.2vw;
  padding: 0 2em 0 0;
+ transition: 0.3s;
+}
+
+.img-rss {
+  padding-right: 2em;
+  height: 5vh;
+  transition: 0.3s;
+}
+.img-rss:hover, .gh:hover, .link:hover, .img-bird:hover {
+  filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%)
+    contrast(87%);
 }
