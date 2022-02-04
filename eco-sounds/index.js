@@ -5,9 +5,9 @@ const links = document.querySelector('.main-menu');
 const image = document.querySelector('.main-container');
 
 
-function playAudio() {
+function playAudio(event) {
   if(!isPlay) {
-    audio.src = "./assets/audio/forest.mp3";
+    audio.src = `./assets/audio/${event.target.dataset.bird}.mp3`;
     audio.currentTime = 0;
     audio.play();
     isPlay = true;
@@ -28,7 +28,23 @@ function changeImage(event) {
 }
 
 
+function changeAudio(event) {
+  if(!isPlay) {
+    audio.src = `./assets/audio/${event.target.dataset.bird}.mp3`;
+    audio.currentTime = 0;
+    audio.play();
+    isPlay = true;
+    toggleBtn()
+  } else {
+    audio.src = `./assets/audio/${event.target.dataset.bird}.mp3`;
+    audio.currentTime = 0;
+    audio.play();
+    isPlay = true;
+  }
+}
+
 
 playBtn.addEventListener('click', toggleBtn);
 playBtn.addEventListener('click', playAudio);
 links.addEventListener('click', changeImage);
+links.addEventListener('click', changeAudio);
