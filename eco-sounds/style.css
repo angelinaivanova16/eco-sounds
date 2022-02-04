@@ -36,6 +36,7 @@ body {
   padding-left: 2em;
   height: 7vh;
   transition: 0.3s;
+  cursor: pointer;
 }
 
 .main-menu {
@@ -49,6 +50,9 @@ body {
  font-size: 1.2vw;
  text-decoration: none;
  color: white;
+}
+.link:hover {
+ cursor: pointer;
 }
 
 /* --------------------------------------------------main-------------------------------------------------------- */
@@ -64,8 +68,8 @@ body {
  justify-content: center;
  align-items: center;
 }
-.btn-video {
- position: absolute;
+.btn-audio {
+ /* position: absolute; */
  background: transparent;
  background-image: url('./assets/svg/play.svg');
  background-repeat: no-repeat;
@@ -76,9 +80,17 @@ body {
  height: 20vh;
  transition: 0.3s;
 }
-.btn-video:hover {
+.btn-audio:hover {
  filter: invert(26%) sepia(7%) saturate(300%) hue-rotate(9deg) brightness(98%)
     contrast(87%);
+}
+
+.btn-pause {
+ width: 20vh;
+ height: 20vh;
+ background-image: url('./assets/svg/pause.svg');
+ background-repeat: no-repeat;
+ cursor: pointer;
 }
 
 /* --------------------------------------------------footer-------------------------------------------------------- */
@@ -110,4 +122,17 @@ body {
 .img-rss:hover, .gh:hover, .link:hover, .img-bird:hover {
   filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%)
     contrast(87%);
+}
+
+
+.pause {
+ background: transparent;
+ background-image: url('./assets/svg/pause.svg');
+ background-repeat: no-repeat;
+ background-size: auto 20vh;
+ cursor: pointer;
+ border: 0;
+ width: 20vh;
+ height: 20vh;
+ transition: 0.3s;
 }
