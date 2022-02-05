@@ -1,14 +1,28 @@
 const playBtn = document.querySelector('.btn-audio');
 const audio = new Audio();
-let isPlay = false;
 const links = document.querySelector('.main-menu');
+const logoBird = document.querySelector('.logo');
 const image = document.querySelector('.main-container');
 const birdsName = document.querySelectorAll("[data-bird]");
+let isPlay = false; // проверяем, проигрывается сейчас музыка или нет
+let currentAudioPath;
+
+
+
+function toggleBtn() {
+  playBtn.classList.toggle('pause');
+}
 
 
 function playAudio(event) {
+  toggleBtn() // для того, чтобы менялось изображение кнопки на pause
+
+  if (!currentAudioPath){
+    currentAudioPath = `./assets/audio/${event.target.dataset.bird}.mp3`;
+  }
+
   if(!isPlay) {
-    audio.src = `./assets/audio/${event.target.dataset.bird}.mp3`;
+    audio.src = currentAudioPath;
     audio.currentTime = 0;
     audio.play();
     isPlay = true;
@@ -18,9 +32,7 @@ function playAudio(event) {
   }
 }
 
-function toggleBtn() {
-  playBtn.classList.toggle('pause');
-}
+
 
 function changeImage(event) {
   if (event.target.dataset.bird){
@@ -31,41 +43,36 @@ function changeImage(event) {
 
 
 function changeAudio(event) {
+  currentAudioPath = `./assets/audio/${event.target.dataset.bird}.mp3`;
   if(!isPlay) {
-    audio.src = `./assets/audio/${event.target.dataset.bird}.mp3`;
+    audio.src = currentAudioPath;
     audio.currentTime = 0;
     audio.play();
     isPlay = true;
 
     toggleBtn() // для того, чтобы менялось изображение кнопки на pause
-
-    birdsName.forEach((el) => { // для добавления и удаления css класса active, чтобы активный элемент выделялся стилем
-      if (el == event.target){
-        el.classList.add('active')
-      } else {
-        el.classList.remove('active')
-      }
-    })
-
   } else {
-    audio.src = `./assets/audio/${event.target.dataset.bird}.mp3`;
+    audio.src = currentAudioPath;
     audio.currentTime = 0;
     audio.play();
     isPlay = true;
-
-    birdsName.forEach((el) => {
-      if (el == event.target){
-        el.classList.add('active')
-      } else {
-        el.classList.remove('active')
-      }
-    })
   }
+
+  birdsName.forEach((el) => { // для добавления и удаления css класса active, чтобы активный элемент выделялся стилем
+    if (el == event.target){
+      el.classList.add('active')
+    } else {
+      el.classList.remove('active')
+    }
+  })
+
 }
 
 
 
-playBtn.addEventListener('click', toggleBtn);
+
 playBtn.addEventListener('click', playAudio);
 links.addEventListener('click', changeImage);
 links.addEventListener('click', changeAudio);
+logoBird.addEventListener('click', changeAudio);
+logoBird.addEventListener('click', changeImage);
